@@ -20,8 +20,8 @@ function Navbar()
                 </div>
             </div>
             <div className="flex-1">
-            <a className="btn btn-ghost text-4xl">Cringe Panels</a>
-            <img src={myimage} alt="fun little pixelart me" width={100} height={100}/>
+            <a className="btn btn-ghost text-xl">Test Site</a>
+            {/*<img src={myimage} alt="fun little pixelart me" width={100} height={100}/>*/}
             </div>
             <div className='flex-none'>
                 <a href='https://forms.gle/pWJQsidGJaH6xAth8' target='_blank'>Give me Panel Feedback!</a>
