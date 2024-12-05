@@ -41,7 +41,7 @@ function LandingPage()
     return(
         <>
             <div className="flex flex-col">
-                <div>
+                <div className="mx-auto">
                     <p className="text-5xl">I'll be at <a href='https://ichibancon.com/' target='_blank' className="font-semibold underline underline-offset-4">Ichibancon 15</a></p>
                 </div>
 
