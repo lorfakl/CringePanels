@@ -32,12 +32,12 @@ function PanelHistory(){
             <h1 className="text-2xl font-bold mb-4">Panel History and Gallery</h1>
             <PanelCarousel images={carouselImages} interval={4000} />
         </div>
-        
+
         <header>
             <h1 className='text-center font-semibold'>Convention History</h1>
         </header>
         
-        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <ul className="p-8 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
                 <div className="timeline-middle">
                     {displayCheckSvg()}
