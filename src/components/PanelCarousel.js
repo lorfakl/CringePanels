@@ -1,31 +1,61 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useRef } from 'react'
 
 function PanelCarousel({ images, interval = 5000 })
 {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // Function to go to the next image
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    };
-
-    // Function to go to the previous image
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
-
-    // Function to jump to a specific slide
-    const goToSlide = (index) => {
-        setCurrentIndex(index);
-    };
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [progress, setProgress] = useState(0); // Added progress state
+    const intervalRef = useRef(null); // Added refs for timers
+    const progressIntervalRef = useRef(null);
 
     // Set up auto-transition timer
     useEffect(() => {
-        const timer = setInterval(() => {nextSlide() }, interval);
+        resetTimers();
+        
+        // Clean up timers on component unmount
+        return () => {
+          if (intervalRef.current) clearInterval(intervalRef.current);
+          if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        };
+    }, [interval, currentIndex]);
 
-        // Clear timer on component unmount
-        return () => clearInterval(timer);
-    }, [interval]);
+    // Function to go to the next image
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
+        setProgress(0)
+    }
+
+    // Function to go to the previous image
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
+        setProgress(0)
+    }
+
+    // Function to jump to a specific slide
+    const goToSlide = (index) => {
+        setCurrentIndex(index)
+        setProgress(0)
+    }
+
+    function resetTimers()
+    {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        
+        // Set up the main timer for slide transition
+        intervalRef.current = setInterval(() => {
+          nextSlide();
+        }, interval);
+        
+        // Set up progress update timer
+        const progressInterval = 16; // ~60fps
+        const progressStep = (progressInterval / interval) * 100;
+        progressIntervalRef.current = setInterval(() => {
+          setProgress(prevProgress => {
+            const newProgress = prevProgress + progressStep;
+            return newProgress > 100 ? 100 : newProgress;
+          });
+        }, progressInterval);
+    }
 
     return(
     <>
@@ -40,28 +70,32 @@ function PanelCarousel({ images, interval = 5000 })
                         alt={image.label || `Slide ${index + 1}`}
                         className="w-full h-full object-cover"
                     />
-                    {image.label && (<div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 text-center">{image.label}</div>)}
-
                 </div>
             ))}
 
             {/* Previous button */}
-            <button className="btn btn-circle absolute left-4 top-1/2 transform -translate-y-1/2" onClick={prevSlide}>
+            <button className="btn btn-circle absolute left-4 top-1/2 transform" onClick={prevSlide}>
                 ❮
             </button>
 
             {/* Next button */}
-            <button className="btn btn-circle absolute right-4 top-1/2 transform -translate-y-1/2" onClick={nextSlide}>
+            <button className="btn btn-circle absolute right-4 top-1/2 transform" onClick={nextSlide}>
                 ❯
             </button>
 
-            {/* Indicator dots */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-                {images.map((_, index) => (
-                <button key={index} onClick={() => goToSlide(index)}
-                    className={`btn btn-xs btn-circle ${index === currentIndex ? 'btn-primary' : 'btn-outline btn-primary'}`}>
-                </button>
-                ))}
+            <div className="flex flex-col gap-2 absolute bottom-4 left-0 right-0 justify-center bg-black bg-opacity-50 rounded-lg">
+                <div className="text-white p-3 text-center">{images[currentIndex].label}</div>
+                <div className='flex flex-row place-self-center'>
+                    {images.map((_, index) => (
+                        <button key={index} onClick={() => goToSlide(index)} 
+                                className={` btn btn-xs btn-circle ${index === currentIndex ? 'btn-primary' : 'btn-outline btn-primary'}`}>
+                        </button>
+                    ))}
+                </div>
+                <div className='place-self-center'>
+                    {/*console.log("progress value: ", progress)*/}
+                    <progress className="progress w-56" value={progress} max={100}></progress>
+                </div>
             </div>
         </div>
     </>

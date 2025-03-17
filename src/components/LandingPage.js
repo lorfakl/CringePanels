@@ -13,13 +13,20 @@ function LandingPage()
         seconds: 0,
     })
 
-    const targetDate = new Date("2025-01-10T22:59:59").getTime();
+    const [nextConvention, setNextConvention] = useState({ //this useState will eventually be used in an api endpoint so that I can update the code from 
+        conventionName: "Triad Con",
+        conventionDate: new Date("2025-03-28T13:00:00"),
+        conventionLink: 'https://triadanimecon.com/'
+    })
 
-    useEffect(()=>{},[]); //this is the usestate to get the what the target date should be on page load 
+    const targetDate = new Date("2025-03-28T13:00:00").getTime();
+
+    useEffect(()=>{},[]); //this is the useEffect to get the what the target date should be on page load 
+    
     useEffect(() =>{
         const countDownInterval = setInterval(() => {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+            const distance = nextConvention.conventionDate - now;
       
             if (distance <= 0) {
               clearInterval(countDownInterval);
@@ -42,7 +49,7 @@ function LandingPage()
         <>
             <div className="flex flex-col">
                 <div className="mx-auto">
-                    <p className="text-5xl">I'll be at <a href='https://ichibancon.com/' target='_blank' className="font-semibold underline underline-offset-4">Ichibancon 15</a></p>
+                    <p className="text-5xl">I'll be at <a href={nextConvention.conventionLink} target='_blank' className="font-semibold underline underline-offset-4">{nextConvention.conventionName}</a></p>
                 </div>
 
                 <div className="mx-auto py-10">
