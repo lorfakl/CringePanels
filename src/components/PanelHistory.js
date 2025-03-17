@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import PanelCarousel from './PanelCarousel';
 
 function PanelHistory(){
 
@@ -18,105 +19,114 @@ function PanelHistory(){
         </>)
     }
 
+    const carouselImages = [
+        { src: '/images/myicon.png', label: 'Beautiful sunset' },
+        { src: '/images/myicon.png', label: 'Mountain landscape' },
+        { src: '/images/myicon.png', label: 'Ocean view' },
+        { src: '/images/myicon.png', label: 'Forest trail' },
+    ];
+
     return(<>
+
+        <div className="container mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Panel Gallery</h1>
+            <PanelCarousel images={carouselImages} interval={4000} />
+        </div>
+
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-start mb-10 md:text-end">
-                <time className="font-mono italic">Traidcon 2023</time>
-                <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
-                As a devloper by trade, my artist and I built a game together. A game that attempts to make learning Japanese more fun(Yokai Chat, Android only), so our first panel was going over the 
-                process of game development, as non-famous or rich normal people. Spoiler Alert: Its HARD!
+                    <time className="font-mono italic">Traidcon 2023</time>
+                    <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
                 </div>
                 <hr />
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-end mb-10">
-                <time className="font-mono italic">Animazement 2023</time>
-                <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
-                Had Yokai Chat's <a href="https://www.instagram.com/pen.saga/" className="underline underline-offset-4">Artistic director</a> on stage for this one
-                <div className="text-lg font-bold">From the mud, like the rest of us(Retired)</div>
-                The idea for this panel was to debunk the self-made shounen propaganda, in which nepo-baby characters like Naruto are put on trial. 
+                    <time className="font-mono italic">Animazement 2023</time>
+                    <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
+                    Had Yokai Chat's <a href="https://www.instagram.com/pen.saga/" className="underline underline-offset-4">Artistic director</a> on stage for this one
+                    <div className="text-lg font-bold">From the mud, like the rest of us(Retired)</div>
                 </div>
                 <hr />
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-start mb-10 md:text-end">
-                <time className="font-mono italic">Ichibancon 2024</time>
-                <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
-                Finally doing a panel at Ichibancon
-                <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
-                People don't hate dubs because they are "cringe", they hate dubs because anime is, and in english its right there in your face
-                
+                    <time className="font-mono italic">Ichibancon 2024</time>
+                    <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
+                    <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
                 </div>
                 <hr />
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-end mb-10">
-                <time className="font-mono italic">Bonzaicon 2024</time>
-                <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
-                
-                <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
-                I was flying solo for this panel, had to deal with my first actual heckler
-                <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
-                Went to the UPS store and vinyl printed a GIANT tierlist banner and then had people engage in vigorious debate regarding which tag belongs where. 
-                Very humbling doing this panel to literally 4, we had a good time though
+                    <time className="font-mono italic">Bonzaicon 2024</time>
+                    <div className="text-lg font-bold">What Releasing a Game is like...for NORMAL people</div>
+                    <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
+                    <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
                 </div>
                 <hr />
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-start mb-10 md:text-end">
-                <time className="font-mono italic">Traidcon 2024</time>
-                <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
-                
-                <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
-                This room was absolutely paaaacked, it was this panel that introduced the <Link to="Feedback" className="underline underline-offset-4">Feedback Survery</Link>
+                    <time className="font-mono italic">Traidcon 2024</time>
+                    <div className="text-lg font-bold">It is not Dubs that are cringe! But Anime itself!</div>
+                    <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
                 </div>
                 <hr/>
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-end mb-10">
-                <time className="font-mono italic">Animazement 2024</time>
-                <div className="text-lg font-bold">It Is Not Dubs That Are Cringe! But Anime Itself!</div>
-                
-                <div className="text-lg font-bold">Cultured Manga Tags Tierlist</div>
-                The Apple Watch is a line 
+                    <time className="font-mono italic">Animazement 2024</time>
+                    <div className="text-lg font-bold">It Is Not Dubs That Are Cringe! But Anime Itself!</div>
+                    <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
                 </div>
                 <hr/>
             </li>
             <li>
                 <hr />
                 <div className="timeline-middle">
-                {displayCheckSvg()}
+                    {displayCheckSvg()}
                 </div>
                 <div className="timeline-start mb-10 md:text-end">
-                <time className="font-mono italic">Blerdcon 2024</time>
-                <div className="text-lg font-bold">Anime Arena: Battle of the Fans!</div>
-                This one did not go well, but this panel has been completely retooled and I'm ready to give it a second go 
+                    <time className="font-mono italic">Blerdcon 2024</time>
+                    <div className="text-lg font-bold">Anime Arena: Battle of the Fans!</div>
                 </div>
-                
+                <hr/>
+            </li>
+            <li>
+                <hr />
+                <div className="timeline-middle">
+                    {displayCheckSvg()}
+                </div>
+                <div className="timeline-end mb-10">
+                    <time className="font-mono italic">Ichibancon 2025</time>
+                    <div className="text-lg font-bold">Yelling About LitRPGs For An Hour</div>
+                    <div className="text-lg font-bold">Cultured Manga Tag Tierlist (18+)</div>
+                </div>
             </li>
         </ul>
     </>)
