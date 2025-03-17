@@ -25,30 +25,29 @@ function Contact()
     }
     
     return(<>
-    <div className="flex flex-col items-center gap-y-8">
-        <div className="">
-            <h1 className="font-normal text-6xl">Contact</h1>
-        </div>
-        <div>
-            <a className="font-semibold text-2xl underline underline-offset-8" href="mailto:kaleb.zahad@gmail.com?">
-            Send Me Mail
-            </a>
-        </div>
-        <div><h1 className="font-semibold text-2xl">Socials!</h1></div>
-        <div>
-        
-            <div className="flex flex-row gap-x-10">
-                {socials.map((platform)=>(
-                    <div>
-                        <div className="place-items-center">
-                            {platform.icon}
-                            <h1>{platform.name}</h1>
+        <div className="flex flex-col items-center gap-y-8">
+            <div className="">
+                <h1 className="font-bold text-6xl">Contact</h1>
+            </div>
+            <div>
+                <a className="font-semibold text-2xl underline underline-offset-8" href="mailto:kaleb.zahad@gmail.com?">
+                Send Me Mail
+                </a>
+            </div>
+            <div><h1 className="font-semibold text-2xl">Socials!</h1></div>
+            <div>
+                <div className="flex flex-col md:flex-row gap-x-10">
+                    {socials.map((platform)=>(
+                        <div>
+                            <div className="place-items-center">
+                                {platform.icon}
+                                <h1 className="font-semibold text-xl">{platform.name}</h1>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
     </>);
 }
 

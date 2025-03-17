@@ -14,9 +14,7 @@ function Navbar()
             if(dropdownRef && !dropdownRef.current.contains(event.target))
             {
                 console.log("valid click outside of dropdown")
-                if (menuStatus) {
-                    closeMenu()
-                }
+                closeMenu()
             }
         }
         
@@ -39,10 +37,6 @@ function Navbar()
         {
             setMenuStatus(true)
         }
-    }
-
-    function handleOffClickEdgeCase(){
-        console.log("Clicked previous panels")
     }
 
     return(
