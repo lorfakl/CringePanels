@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import BannerImage from '../images/Kaizen_Panel_Banner.png'
 
 
 function LandingPage()
@@ -47,9 +47,9 @@ function LandingPage()
 
     return(
         <>
-            <div className="flex flex-col place-items-center">
+            <div className="flex flex-col bg-neutral min-h-screen overflow-hidden">
                 <div className="mx-auto">
-                    <p className="text-5xl">We'll be at <a href={nextConvention.conventionLink} target='_blank' className="font-semibold underline underline-offset-4">{nextConvention.conventionName}</a></p>
+                    <p className="text-5xl lg:text-7xl">We'll be at <a href={nextConvention.conventionLink} target='_blank' className="font-semibold underline underline-offset-4">{nextConvention.conventionName}</a></p>
                 </div>
 
                 <div className="mx-auto py-10">
@@ -86,18 +86,21 @@ function LandingPage()
                     </div>
                 </div>
 
-                <div className="card bg-base-100 w-96 shadow-xl">
+                <div className="flex flex-col lg:flex-row lg:gap-x-16 justify-center bg-neutral">
+                
+
+                <div className="card bg-neutral place-self-center w-96 lg:card-side lg:w-1/2 lg:h-1/4 shadow-xl ">
                     <figure>
-                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
+                        <img src={BannerImage} alt="Kaizen Panels!" />
                     </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Want us at a Convention near you?</h2>
-                        <p>Send an email to your local convention and tell them to invite us. You will need to find their email though, because we dont know where you live</p>
-                        <div className="card-actions justify-center">
+                    <div className="card-body h-1/4">
+                        <h2 className="card-title lg:text-3xl">Want us at a Convention near you?</h2>
+                        <p className="h-1/4">Send an email to your local convention and tell them to invite us. You will need to find their email though, because we dont know where you live</p>
+                        <div className="card-actions justify-end lg:justify-start">
                             <a 
                                 className="font-semibold text-2xl underline underline-offset-8" 
                                 href="mailto:conventionprogramming@exampleconvention.com?subject=Please%20Invite%20Kaizen%20Panels">
-                                <button className="btn btn-primary">Email your local convention</button>
+                                <button className="btn btn-accent">Email your local convention</button>
                             </a>
                         </div>
                     </div>
@@ -129,6 +132,8 @@ function LandingPage()
                 </div>
                 
             </div>
+            </div>
+            
         </>
     );
 }

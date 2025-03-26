@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import myimage from '../images/myicon.png'
+import NavbarBanner from '../images/NavbarBanner.webp'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-router';
 
@@ -41,7 +42,7 @@ function Navbar()
 
     return(
         <>
-        <div className="navbar bg-base-100 flex flex-wrap items-center justify-between p-2">
+        <div className="navbar flex flex-wrap items-center justify-between p-2 bg-secondary sticky top-0 z-10 ">
           {/* Hamburger Menu */}
           <div className="flex-none order-1" ref={dropdownRef}>
             <div className="dropdown">
@@ -49,7 +50,7 @@ function Navbar()
                 <GiHamburgerMenu size={24}/>
               </div>
               {menuStatus ? 
-                <ul tabIndex={0} className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-5 shadow-2xl outline outline-offset-2 outline-2 mt-2">
+                <ul tabIndex={0} className="menu dropdown-content bg-secondary rounded-box z-[1] w-52 shadow-2xl mt-2">
                   <li><Link to="About" onClick={closeMenu}>About</Link></li>
                   <li><Link to="Contact" onClick={closeMenu}>Contact</Link></li>
                   <li><Link to="Feedback" onClick={closeMenu}>Feedback</Link></li>
@@ -60,12 +61,11 @@ function Navbar()
             </div>
           </div>
           
-          {/* Logo and Brand */}
-          <div className="flex-1 order-2 lg:order-1 flex justify-center lg:justify-start items-center">
+          {/* Logo and Brand  flex justify-center lg:justify-start items-center flex-1  */}
+          <div className="order-2 lg:order-1 flex-shrink-0 overflow-hidden max-w-[250px] sm:max-w-[300px] md:max-w-[350px]">
             <Link to="/" className="btn btn-ghost normal-case text-2xl sm:text-3xl md:text-4xl lg:text-5xl mr-2">
-              Kaizen Panels
+              <img src={NavbarBanner} alt="fun little pixelart me" className="w-full max-w-[300px] h-full object-contain sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] object-contain"/> 
             </Link>
-            <img src={myimage} alt="fun little pixelart me" className="w-16 h-12 sm:w-20 sm:h-16 md:w-25 md:h-20 lg:w-130 lg:h-100"/> 
           </div>
           
           

@@ -9,23 +9,9 @@ function Contact()
         {name: "tiktok", icon: <a href="https://www.tiktok.com/@kalebjahad"><FaTiktok size={30}/></a>}, 
         {name: "twitch", icon: <a href="https://www.twitch.tv/kalebjahad"><FaTwitch size={30}/></a>}
     ]
-
-    function displaySocials()
-    {
-        
-        return socials.map((platform) => {
-            <>
-                <div>
-                    {platform.icon}
-                    <h1>{platform.name}</h1>
-                </div>
-            </>
-        })
-        
-    }
     
     return(<>
-        <div className="flex flex-col items-center gap-y-8">
+        <div className="bg-neutral flex flex-col items-center gap-y-8 min-h-screen">
             <div className="">
                 <h1 className="font-bold text-6xl">Contact</h1>
             </div>

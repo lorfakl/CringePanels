@@ -27,17 +27,18 @@ function PanelHistory(){
     ];
 
     return(<>
-
+        {/** 
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">Panel History and Gallery</h1>
             <PanelCarousel images={carouselImages} interval={4000} />
         </div>
+        **/}
 
-        <header>
-            <h1 className='text-center font-semibold'>Convention History</h1>
+        <header className="bg-neutral">
+            <h1 className='text-center font-bold underline text-3xl lg:text-7xl'>Convention History</h1>
         </header>
         
-        <ul className="p-8 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <ul className="bg-neutral p-8 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
                 <div className="timeline-middle">
                     {displayCheckSvg()}
