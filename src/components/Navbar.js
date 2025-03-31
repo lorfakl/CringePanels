@@ -42,7 +42,7 @@ function Navbar()
 
     return(
         <>
-        <div className="navbar flex flex-wrap items-center justify-between p-2 bg-secondary sticky top-0 z-10 ">
+        <div className="navbar flex flex-wrap items-center justify-between p-2 bg-secondary">
           {/* Hamburger Menu */}
           <div className="flex-none order-1" ref={dropdownRef}>
             <div className="dropdown">
