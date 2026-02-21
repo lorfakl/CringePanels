@@ -14,12 +14,12 @@ function LandingPage()
     })
 
     const [nextConvention, setNextConvention] = useState({ //this useState will eventually be used in an api endpoint so that I can update the code from 
-        conventionName: "Animazement 2025",
-        conventionDate: new Date("2025-05-24T13:00:00"),
-        conventionLink: 'https://animazement.com/'
+        conventionName: "Banzaicon 2026",
+        conventionDate: new Date("2026-03-06T13:00:00"),
+        conventionLink: 'https://banzaicon.com/'
     })
 
-    const targetDate = new Date("2025-03-28T13:00:00").getTime();
+    const targetDate = new Date("2026-03-06T13:00:00").getTime();
 
     useEffect(()=>{},[]); //this is the useEffect to get the what the target date should be on page load 
     
