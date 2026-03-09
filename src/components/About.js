@@ -30,7 +30,7 @@ function About()
             
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={shygal} className="w-[200px] h-[280px] rounded-lg" />
+                    <img src={shygal} className="w-[200px] h-[200px] rounded-full object-cover" />
                     <div>
                         <h1 className="text-5xl font-bold">Chief Organizational Officer</h1>
                         <p className="py-6">

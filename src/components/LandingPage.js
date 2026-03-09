@@ -112,13 +112,13 @@ function LandingPage()
                     <div className="stats stats-vertical lg:stats-horizontal shadow">
                         <div className="stat">
                             <div className="stat-title">Panels Presented</div>
-                            <div className="stat-value">17</div>
+                            <div className="stat-value">24</div>
                             <div className="stat-desc">March 2023 - May 2025</div>
                         </div>
 
                         <div className="stat">
                             <div className="stat-title">Hours of Content</div>
-                            <div className="stat-value">170</div>
+                            <div className="stat-value">26</div>
                             <div className="stat-desc">March 2023 - May 2025</div>
                         </div>
                         {/* 
