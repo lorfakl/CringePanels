@@ -149,7 +149,7 @@ function PanelHistory(){
         **/}
 
         <header className="bg-neutral p-4">
-            <h1 className='text-center font-bold underline text-3xl lg:text-7xl'>Convention History</h1>
+            <h1 className='text-center font-bold underline text-3xl lg:text-7xl'>Panel History</h1>
             <div className="text-center mt-4">
                 <button onClick={toggleSortOrder} className="btn btn-primary">
                     Sort by Year ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
