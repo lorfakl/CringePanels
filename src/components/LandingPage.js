@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import BannerImage from '../images/Kaizen_Panel_Banner.png'
+import { getTotalHours, getTotalPanels, getAllConventions } from '../services/panelDataService';
 
 
 function LandingPage()
 {
 
+    const [stats, setStats] = useState({
+        totalPanels: 0,
+        totalHours: 0,
+        dateRange: ''
+    });
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -13,11 +19,31 @@ function LandingPage()
         seconds: 0,
     })
 
-    const [nextConvention, setNextConvention] = useState({ //this useState will eventually be used in an api endpoint so that I can update the code from 
+    const [nextConvention, setNextConvention] = useState({
         conventionName: "Momocon 2026",
         conventionDate: new Date("2026-05-21T22:00:00"),
         conventionLink: 'https://www.momocon.com/'
     })
+
+    // Calculate stats on component mount
+    useEffect(() => {
+        const conventions = getAllConventions();
+        const totalPanel = getTotalPanels();
+        const totalHour = getTotalHours();
+        
+        // Get date range
+        if (conventions.length > 0) {
+            const sorted = [...conventions].sort((a, b) => a.startDate - b.startDate);
+            const startDate = sorted[0].startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+            const endDate = sorted[sorted.length - 1].startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+            
+            setStats({
+                totalPanels: totalPanel,
+                totalHours: totalHour,
+                dateRange: `${startDate} - ${endDate}`
+            });
+        }
+    }, []);
 
     const targetDate = new Date("2026-05-21T22:00:00").getTime();
 
@@ -112,22 +138,15 @@ function LandingPage()
                     <div className="stats stats-vertical lg:stats-horizontal shadow">
                         <div className="stat">
                             <div className="stat-title">Panels Presented</div>
-                            <div className="stat-value">24</div>
-                            <div className="stat-desc">March 2023 - May 2025</div>
+                            <div className="stat-value">{stats.totalPanels}</div>
+                            <div className="stat-desc">{stats.dateRange}</div>
                         </div>
 
                         <div className="stat">
                             <div className="stat-title">Hours of Content</div>
-                            <div className="stat-value">26</div>
-                            <div className="stat-desc">March 2023 - May 2025</div>
+                            <div className="stat-value">{stats.totalHours}</div>
+                            <div className="stat-desc">{stats.dateRange}</div>
                         </div>
-                        {/* 
-                        <div className="stat">
-                            <div className="stat-title">Average Rating</div>
-                            <div className="stat-value">1,200</div>
-                            <div className="stat-desc">↘︎ 90 (14%)</div>
-                        </div>
-                        */}
                     </div>
                 </div>
                 

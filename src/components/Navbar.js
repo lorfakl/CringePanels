@@ -51,7 +51,7 @@ function Navbar()
               </div>
               {menuStatus ? 
                 <ul tabIndex={0} className="menu dropdown-content bg-secondary rounded-box z-[1] w-52 shadow-2xl mt-2">
-                  <li><Link to="About" onClick={closeMenu}>About</Link></li>
+                  <li><Link to="About" onClick={closeMenu}>The Team</Link></li>
                   <li><Link to="Contact" onClick={closeMenu}>Contact</Link></li>
                   <li><Link to="Feedback" onClick={closeMenu}>Feedback</Link></li>
                   <li><Link to="PanelHistory" onClick={closeMenu}>Previous Panels</Link></li>
@@ -73,7 +73,7 @@ function Navbar()
           {/* Desktop Menu - Hidden on Mobile */}
           <div className="hidden lg:flex flex-none order-3 ml-4">
             <ul className="menu menu-horizontal px-1">
-              <li><Link to="About">About</Link></li>
+              <li><Link to="About">The Team</Link></li>
               <li><Link to="Contact">Contact</Link></li>
               <li><Link to="Feedback">Feedback</Link></li>
               <li><Link to="PanelHistory">Previous Panels</Link></li>

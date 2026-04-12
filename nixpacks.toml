@@ -1,0 +1,3 @@
+[static]
+  index = "index.html"
+  fallback = "index.html"

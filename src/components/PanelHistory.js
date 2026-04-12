@@ -1,186 +1,140 @@
-import { Link } from 'react-router';
-import React, { useState } from 'react';
-import PanelCarousel from './PanelCarousel';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { getAvailableYears, getConventionsByYear } from '../services/panelDataService';
+import ConventionBreakCard from './panelHistory/ConventionBreakCard';
+import PanelCard from './panelHistory/PanelCard';
 
-function PanelHistory(){
+function PanelHistory() {
+    const years = getAvailableYears();
+    const [selectedYear, setSelectedYear] = useState(years[years.length - 1]); // Start with most recent year
+    const verticalCarouselRef = useRef(null);
 
-    const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
+    const yearConventions = getConventionsByYear(selectedYear);
+    const yearItems = useMemo(() => {
+        return yearConventions.flatMap((convention) => {
+            const conventionItem = {
+                type: 'convention',
+                id: `convention-${convention.name}-${convention.startDate.getTime()}`,
+                name: convention.name,
+                startDate: convention.startDate,
+                panelCount: convention.panels.length,
+                totalHours: convention.panels.reduce((sum, panel) => sum + (panel.durationHours || 0), 0),
+                previewImage: convention.previewImage,
+                websiteUrl: convention.websiteUrl
+            };
 
-    function displayCheckSvg()
-    {
-        return(<>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="h-5 w-5">
-                <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                clipRule="evenodd" />
-            </svg>
-        </>)
-    }
+            const panelItems = convention.panels.map((panel, index) => ({
+                ...panel,
+                type: 'panel',
+                id: `panel-${convention.name}-${index}`,
+                convention: convention.name,
+                conventionDate: convention.startDate
+            }));
 
-    const carouselImages = [
-        { src: '/images/myicon.png', label: 'Beautiful sunset' },
-        { src: '/images/myicon.png', label: 'Mountain landscape' },
-        { src: '/images/myicon.png', label: 'Ocean view' },
-        { src: '/images/myicon.png', label: 'Forest trail' },
-    ];
+            return [conventionItem, ...panelItems];
+        });
+    }, [yearConventions]);
 
-    const conventionHistory = [
-        {
-            startDate: new Date('2023-03-25'),
-            name: 'Traidcon 2023',
-            panels: [
-                { title: 'What Releasing a Game is like...for NORMAL people' }
-            ]
-        },
-        {
-            startDate: new Date('2023-05-26'),
-            name: 'Animazement 2023',
-            panels: [
-                { title: 'What Releasing a Game is like...for NORMAL people', description: "Had Yokai Chat's <a href=\"https://www.instagram.com/pen.saga/\" className=\"underline underline-offset-4\">Artistic director</a> on stage for this one" },
-                { title: 'From the mud, like the rest of us(Retired)' }
-            ]
-        },
-        {
-            startDate: new Date('2024-01-05'),
-            name: 'Ichibancon 2024',
-            panels: [
-                { title: 'What Releasing a Game is like...for NORMAL people' },
-                { title: 'It is not Dubs that are cringe! But Anime itself!' }
-            ]
-        },
-        {
-            startDate: new Date('2024-02-16'),
-            name: 'Bonzaicon 2024',
-            panels: [
-                { title: 'What Releasing a Game is like...for NORMAL people' },
-                { title: 'It is not Dubs that are cringe! But Anime itself!' },
-                { title: 'Cultured Manga Tag Tierlist (18+)' }
-            ]
-        },
-        {
-            startDate: new Date('2024-03-23'),
-            name: 'Traidcon 2024',
-            panels: [
-                { title: 'It is not Dubs that are cringe! But Anime itself!' },
-                { title: 'Cultured Manga Tag Tierlist (18+)' }
-            ]
-        },
-        {
-            startDate: new Date('2024-05-24'),
-            name: 'Animazement 2024',
-            panels: [
-                { title: 'It Is Not Dubs That Are Cringe! But Anime Itself!' },
-                { title: 'Cultured Manga Tag Tierlist (18+)' }
-            ]
-        },
-        {
-            startDate: new Date('2024-07-05'),
-            name: 'Blerdcon 2024',
-            panels: [
-                { title: 'Anime Arena: Battle of the Fans!' }
-            ]
-        },
-        {
-            startDate: new Date('2025-01-03'),
-            name: 'Ichibancon 2025',
-            panels: [
-                { title: 'Yelling About LitRPGs For An Hour' },
-                { title: 'Cultured Manga Tag Tierlist (18+)' }
-            ]
-        },
-        {
-            startDate: new Date('2025-03-22'),
-            name: 'Triadcon 2025',
-            panels: [
-                { title: 'Yelling About LitRPGs For An Hour' },
-                { title: 'Cultured Manga Tag Tierlist (18+)' }
-            ]
-        },
-        {
-            startDate: new Date('2025-05-23'),
-            name: 'Animazement 2025',
-            panels: [
-                { title: 'NEW! 2025 Anime Tierlist - Summer Edition' },
-                { title: '4D Chess Tournament!!! - Smartest In Anime' },
-                { title: 'STOP! Dont Tier 3 to that VTuber!! (Or do, Im not your mom, but she might be)' }
-            ]
-        },
-        {
-            startDate: new Date('2025-11-07'),
-            name: 'Nekocon 2025',
-            panels: [
-                { title: 'NEW! 2025 Anime Tierlist - Winter Edition' },
-                { title: 'The Meh-nificent Sixteen: A Tournament of Mid!' },
-                { title: 'Dubs Are Objectively The Best Way To Watch Anime: Yes You\'re All Wrong' }
-            ]
-        },
-        {
-            startDate: new Date('2026-01-07'),
-            name: 'Ichibancon 2026',
-            panels: [
-                { title: 'NEW! 2025 Anime Tierlist! All 128 Shows!?!? (No Shot!)' },
-                { title: 'ULTRA Romantic Tournament Arc: Most Romantic Anime' }
-            ]
+    const handlePrevYear = () => {
+        const currentIdx = years.indexOf(selectedYear);
+        if (currentIdx > 0) {
+            setSelectedYear(years[currentIdx - 1]);
         }
-    ];
-
-    const sortedHistory = [...conventionHistory].sort((a, b) => {
-        if (sortOrder === 'asc') {
-            return a.startDate - b.startDate;
-        }
-        return b.startDate - a.startDate;
-    });
-
-    const toggleSortOrder = () => {
-        setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     };
 
-    return(<>
-        {/** 
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Panel History and Gallery</h1>
-            <PanelCarousel images={carouselImages} interval={4000} />
-        </div>
-        **/}
+    const handleNextYear = () => {
+        const currentIdx = years.indexOf(selectedYear);
+        if (currentIdx < years.length - 1) {
+            setSelectedYear(years[currentIdx + 1]);
+        }
+    };
 
-        <header className="bg-neutral p-4">
-            <h1 className='text-center font-bold underline text-3xl lg:text-7xl'>Panel History</h1>
-            <div className="text-center mt-4">
-                <button onClick={toggleSortOrder} className="btn btn-primary">
-                    Sort by Year ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
-                </button>
-            </div>
-        </header>
-        
-        <ul className="bg-neutral p-8 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-            {sortedHistory.map((event, index) => {
-                const alignment = index % 2 === 0 ? 'start' : 'end';
-                return (
-                <li key={index}>
-                    {index > 0 && <hr />}
-                    <div className="timeline-middle">
-                        {displayCheckSvg()}
+    useEffect(() => {
+        if (verticalCarouselRef.current) {
+            verticalCarouselRef.current.scrollTo({
+                top: 0,
+                behavior: 'auto'
+            });
+        }
+    }, [selectedYear]);
+
+    return (
+        <div className="bg-neutral min-h-screen p-4 lg:p-8">
+            <h1 className="text-center font-bold underline text-3xl lg:text-7xl mb-8">
+                Panel History
+            </h1>
+
+            <div className="flex justify-center mb-8">
+                <div className="flex items-center gap-4 ">
+                    <button
+                        onClick={handlePrevYear}
+                        className="btn btn-sm lg:btn-md btn-secondary"
+                        disabled={years.indexOf(selectedYear) === 0}
+                    >
+                        ←
+                    </button>
+
+                    <div className="flex-1 overflow-x-auto">
+                        <div className="flex gap-3 pb-2">
+                            {years.map((year) => (
+                                <button
+                                    key={year}
+                                    onClick={() => setSelectedYear(year)}
+                                    className={`btn btn-sm lg:btn-md whitespace-nowrap ${
+                                        selectedYear === year
+                                            ? 'btn-primary'
+                                            : 'btn-neutral'
+                                    }`}
+                                >
+                                    {year}
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                    <div className={`timeline-${alignment} mb-10 ${alignment === 'start' ? 'md:text-end' : ''}`}>
-                        <time className="font-mono italic">{event.name}</time>
-                        {event.panels.map((panel, panelIndex) => (
-                            <div key={panelIndex}>
-                                <div className="text-lg font-bold">{panel.title}</div>
-                                {panel.description && <div dangerouslySetInnerHTML={{ __html: panel.description }} />}
+
+                    <button
+                        onClick={handleNextYear}
+                        className="btn btn-sm lg:btn-md btn-secondary"
+                        disabled={years.indexOf(selectedYear) === years.length - 1}
+                    >
+                        →
+                    </button>
+                </div>
+            </div>
+
+            <div className="flex justify-center">
+                <div className="w-full max-w-2xl">
+                    <div ref={verticalCarouselRef} className="carousel carousel-vertical w-full h-96 lg:h-[600px] rounded-box bg-base-200 shadow-lg">
+                        {yearItems.map((item, idx) => (
+                            <div
+                                key={item.id}
+                                id={`panel-${idx}`}
+                                className="carousel-item w-full h-full snap-center scroll-smooth"
+                            >
+                                <div className="flex flex-col w-full h-full p-4 lg:p-8">
+                                    {item.type === 'convention' ? (
+                                        <ConventionBreakCard item={item} />
+                                    ) : (
+                                        <PanelCard item={item} />
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
-                    {index < sortedHistory.length -1 && <hr/>}
-                </li>
-                );
-            })}
-        </ul>
-    </>)
+
+                    <div className="text-center text-sm opacity-75 mt-4">
+                        <p>
+                            {yearConventions.reduce((sum, convention) => sum + convention.panels.length, 0)} panel
+                            {yearConventions.reduce((sum, convention) => sum + convention.panels.length, 0) !== 1 ? 's' : ''} in {selectedYear}
+                        </p>
+                        <p>{yearConventions.length} convention{yearConventions.length !== 1 ? 's' : ''}</p>
+                        <p className="font-semibold text-base">
+                            {yearItems.reduce((sum, item) => sum + (item.durationHours || 0), 0)} hours total
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default PanelHistory
