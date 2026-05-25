@@ -1,3 +1,11 @@
+[providers]
+use = ['node', 'static']
+
+[phases.build]
+cmds = ['npm install', 'npm run build']
+
 [static]
-  index = "index.html"
-  fallback = "index.html"
+# Change "dist" to "build" if you are using Create React App instead of Vite
+dir = "dist" 
+index = "index.html"
+fallback = "index.html"
