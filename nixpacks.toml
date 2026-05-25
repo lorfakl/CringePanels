@@ -5,6 +5,6 @@ cmds = ['npm install', 'npm run build']
 
 [static]
 # Change "dist" to "build" if you are using Create React App instead of Vite
-dir = "dist" 
+dir = "build" 
 index = "index.html"
 fallback = "index.html"
