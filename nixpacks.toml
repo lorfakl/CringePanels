@@ -1,4 +1,4 @@
-providers = ['node', 'static']
+providers = ['node', 'staticfile']
 
 [phases.build]
 cmds = ['npm install', 'npm run build']
