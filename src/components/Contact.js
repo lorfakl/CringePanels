@@ -3,21 +3,21 @@ import { FaYoutube, FaInstagram, FaTiktok, FaTwitch, FaTwitter } from "react-ico
 function Contact()
 {
     const socials = [
-        {name: "twitter/X", icon: <a href="https://x.com/kalebdevhad?lang=en"><FaTwitter size={30} /></a>}, 
-        {name: "instagram", icon: <a href="https://www.instagram.com/kalebjahad/"><FaInstagram size={30}/></a>}, 
-        {name: "youtube", icon: <a href="https://www.youtube.com/@kalebjahad"><FaYoutube size={30}/></a> },
-        {name: "tiktok", icon: <a href="https://www.tiktok.com/@kalebjahad"><FaTiktok size={30}/></a>}, 
+        {name: "twitter/X", icon: <a href="https://x.com/kaizenpanels?lang=en"><FaTwitter size={30} /></a>}, 
+        {name: "instagram", icon: <a href="https://www.instagram.com/kaizenpanels/"><FaInstagram size={30}/></a>}, 
+        {name: "youtube", icon: <a href="https://www.youtube.com/@kaizenpanels"><FaYoutube size={30}/></a> },
+        {name: "tiktok", icon: <a href="https://www.tiktok.com/@kaizenpanels"><FaTiktok size={30}/></a>}, 
         {name: "twitch", icon: <a href="https://www.twitch.tv/kalebjahad"><FaTwitch size={30}/></a>}
     ]
     
     return(<>
         <div className="bg-neutral flex flex-col items-center gap-y-8 min-h-screen">
             <div className="">
-                <h1 className="font-bold text-6xl">Contact</h1>
+                <h1 className="font-bold text-6xl">Contact Us</h1>
             </div>
-            <div>
-                <a className="font-semibold text-2xl underline underline-offset-8" href="mailto:kaleb.zahad@gmail.com?">
-                Send Me Mail
+            <div className="flex flex-col items-center max-w-3xl text-center">
+                <a className="font-semibold text-2xl underline underline-offset-8" href="mailto:contact@kaizenpanels.live?">
+                Send us an email!
                 </a>
             </div>
             <div><h1 className="font-semibold text-2xl">Socials!</h1></div>

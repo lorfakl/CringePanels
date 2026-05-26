@@ -281,6 +281,27 @@
             ],
             "websiteUrl": "https://www.momocon.com",
             "previewImage": "/conventions/momocon.png"
+        },
+        {
+            "startDate": "2026-06-27",
+            "name": "Big Charlotte Anime 2026",
+            "panels": [
+                {
+                    "title": "So You Want To Be A Special Grade (Hardest JJK Trivia)",
+                    "durationHours": 1,
+                    "image": "so_you_want_to_be_a_special_grade.png"
+                },
+                {
+                    "title": "NEW! Summer 2025 Anime Tierlist",
+                    "durationHours": 1,
+                    "image": "summer_2025_anime_tierlist.png"
+                },
+                {
+                    "title": "Dubs Are Objectively The Best Way To Watch Anime: Yes You're All Wrong",
+                    "durationHours": 1,
+                    "image": "dubs_are_great.png"
+                }
+            ]
         }
     ]
 }
