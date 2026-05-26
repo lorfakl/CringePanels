@@ -7,7 +7,7 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "/images/panels/releasing-game.jpg"
+                    "image": "making_games.png"
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -21,7 +21,7 @@
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "description": "Had Yokai Chat's <a href=\"https://www.instagram.com/pen.saga/\" className=\"underline underline-offset-4\">Artistic director</a> on stage for this one",
                     "durationHours": 1,
-                    "image": "/images/panels/releasing-game.jpg"
+                    "image": "making_games.png"
                 },
                 {
                     "title": "From the mud, like the rest of us(Retired)",
@@ -41,12 +41,12 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "/images/panels/releasing-game.jpg"
+                    "image": "making_games.png"
                 },
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "/images/panels/dubs-cringe.jpg"
+                    "image": "dubs_are_great.png"
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -59,17 +59,17 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "/images/panels/releasing-game.jpg"
+                    "image": "making_games.png"
                 },
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "/images/panels/dubs-cringe.jpg"
+                    "image": "dubs_are_great.png"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "/images/panels/manga-tierlist.jpg"
+                    "image": "cultured_manga_tags.png"
                 }
             ],
             "websiteUrl": "https://banzaicon.com",
@@ -82,12 +82,12 @@
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "/images/panels/dubs-cringe.jpg"
+                    "image": "dubs_are_great.png"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "/images/panels/manga-tierlist.jpg"
+                    "image": "cultured_manga_tags.png"
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -100,12 +100,12 @@
                 {
                     "title": "It Is Not Dubs That Are Cringe! But Anime Itself!",
                     "durationHours": 1,
-                    "image": "/images/panels/dubs-cringe.jpg"
+                    "image": "dubs_are_great.png"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "/images/panels/manga-tierlist.jpg"
+                    "image": "cultured_manga_tags.png"
                 }
             ],
             "websiteUrl": "https://www.animazement.com",
@@ -133,12 +133,12 @@
                 {
                     "title": "Yelling About LitRPGs For An Hour",
                     "durationHours": 1,
-                    "image": "/images/panels/litrpg.jpg"
+                    "image": "yelling_about_litrpgs.png"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "/images/panels/manga-tierlist.jpg"
+                    "image": "cultured_manga_tags.png"
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -151,12 +151,12 @@
                 {
                     "title": "Yelling About LitRPGs For An Hour",
                     "durationHours": 1,
-                    "image": "/images/panels/litrpg.jpg"
+                    "image": "yelling_about_litrpgs.png"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 2,
-                    "image": "/images/panels/manga-tierlist.jpg"
+                    "image": "cultured_manga_tags.png"
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -167,7 +167,7 @@
             "name": "Animazement 2025",
             "panels": [
                 {
-                    "title": "NEW! 2025 Anime Tierlist - Summer Edition",
+                    "title": "NEW! Summer 2025 Anime Tierlist",
                     "durationHours": 1,
                     "image": "/images/panels/anime-tierlist-summer.jpg"
                 },
@@ -179,7 +179,7 @@
                 {
                     "title": "STOP! Dont Tier 3 to that VTuber!! (Or do, Im not your mom, but she might be)",
                     "durationHours": 1,
-                    "image": "/images/panels/vtuber-tier.jpg"
+                    "image": "vtuber.png"
                 }
             ],
             "websiteUrl": "https://www.animazement.com",
@@ -202,7 +202,7 @@
                 {
                     "title": "Dubs Are Objectively The Best Way To Watch Anime: Yes You're All Wrong",
                     "durationHours": 1,
-                    "image": "/images/panels/dubs-best.jpg"
+                    "image": "dubs_are_great.png"
                 }
             ],
             "websiteUrl": "https://nekocon.com",
@@ -222,7 +222,7 @@
                 {
                     "title": "ULTRA Romantic Tournament Arc: Most Romantic Anime",
                     "durationHours": 1,
-                    "image": "/images/panels/romantic-tournament.jpg"
+                    "image": "UltraRomanticRumble.png"
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -235,12 +235,12 @@
                 {
                     "title": "NEW! Winter 2026 Anime Tierlist!",
                     "durationHours": 1,
-                    "image": "/images/panels/anime-tierlist-winter-2026.jpg"
+                    "image": "WinterAnime26Title.png"
                 },
                 {
                     "title": "Weird Anime Kid Becomes Weird Anime Adult (Emotional)",
                     "durationHours": 1,
-                    "image": "/images/panels/weird-kid-adult.jpg"
+                    "image": "weird_anime_kid.png"
                 }
             ],
             "websiteUrl": "https://banzaicon.com",
@@ -253,17 +253,17 @@
                 {
                     "title": "NEW! Winter 2026 Anime Tierlist!",
                     "durationHours": 1,
-                    "image": "/images/panels/anime-tierlist-winter-2026.jpg"
+                    "image": "WinterAnime26Title.png"
                 },
                 {
                     "title": "Weird Anime Kid Becomes Weird Anime Adult (Emotional)",
                     "durationHours": 1,
-                    "image": "/images/panels/weird-kid-adult.jpg"
+                    "image": "weird_anime_kid.png"
                 },
                 {
                     "title": "Hater's Ball: Most Hated Anime",
                     "durationHours": 1,
-                    "image": "/images/panels/haters-ball.jpg"
+                    "image": "most_hated.png"
                 }
             ],
             "websiteUrl": "https://triadcon.org",
@@ -276,7 +276,7 @@
                 {
                     "title": "3D Printing 4 Cosplay!",
                     "durationHours": 1,
-                    "image": "/images/panels/3d-printing.jpg"
+                    "image": "3d_printing.png"
                 }
             ],
             "websiteUrl": "https://www.momocon.com",

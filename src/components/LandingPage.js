@@ -20,9 +20,9 @@ function LandingPage()
     })
 
     const [nextConvention, setNextConvention] = useState({
-        conventionName: "Momocon 2026",
-        conventionDate: new Date("2026-05-21T22:00:00"),
-        conventionLink: 'https://www.momocon.com/'
+        conventionName: "Big Charlotte Anime 2026",
+        conventionDate: new Date("2026-06-27T09:00:00"),
+        conventionLink: 'https://bigcharlotteanime.com/'
     })
 
     // Calculate stats on component mount

@@ -1,14 +1,11 @@
 import React from 'react';
-import ImageComingSoon from './ImageComingSoon';
+import PanelImage from './PanelImage';
 
 function PanelCard({ item }) {
     return (
         <div className="card bg-base-100 shadow-xl h-full flex flex-col">
-            <div className="absolute top-4 right-4 badge badge-outline z-10">
-                {item.convention}
-            </div>
-
-            <ImageComingSoon />
+            {console.log(item.image)}
+            <PanelImage image={item.image} />
 
             <div className="card-body flex-grow overflow-y-auto">
                 <h2 className="card-title text-xl lg:text-3xl leading-tight pr-20">
@@ -18,8 +15,11 @@ function PanelCard({ item }) {
                 <div className="divider my-2"></div>
 
                 <div className="flex gap-2 mb-3">
+                    <div className="badge badge-secondary badge-lg ">
+                        {item.convention}
+                    </div>
                     <div className="badge badge-primary badge-lg">
-                        {item.durationHours} hour{item.durationHours !== 1 ? 's' : ''}
+                        {item.durationHours} hour{item.durationHours !== 1 ? 's' : ''} 
                     </div>
                     <div className="badge badge-outline">
                         {item.conventionDate.toLocaleDateString('en-US', {
@@ -27,6 +27,7 @@ function PanelCard({ item }) {
                             day: 'numeric'
                         })}
                     </div>
+                    
                 </div>
 
                 {item.description && (
