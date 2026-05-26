@@ -3,11 +3,11 @@ import { FaYoutube, FaInstagram, FaTiktok, FaTwitch, FaTwitter } from "react-ico
 function Contact()
 {
     const socials = [
-        {name: "twitter/X", icon: <a href="https://x.com/kaizenpanels?lang=en"><FaTwitter size={30} /></a>}, 
-        {name: "instagram", icon: <a href="https://www.instagram.com/kaizenpanels/"><FaInstagram size={30}/></a>}, 
-        {name: "youtube", icon: <a href="https://www.youtube.com/@kaizenpanels"><FaYoutube size={30}/></a> },
-        {name: "tiktok", icon: <a href="https://www.tiktok.com/@kaizenpanels"><FaTiktok size={30}/></a>}, 
-        {name: "twitch", icon: <a href="https://www.twitch.tv/kalebjahad"><FaTwitch size={30}/></a>}
+        {name: "twitter/X", icon: <a href="https://x.com/kaizenpanels?lang=en" target="_blank"><FaTwitter size={30} /></a>}, 
+        {name: "instagram", icon: <a href="https://www.instagram.com/kaizenpanels/" target="_blank"><FaInstagram size={30}/></a>}, 
+        {name: "youtube", icon: <a href="https://www.youtube.com/@kaizenpanels" target="_blank"><FaYoutube size={30}/></a> },
+        {name: "tiktok", icon: <a href="https://www.tiktok.com/@kaizenpanels" target="_blank"><FaTiktok size={30}/></a>}, 
+        {name: "twitch", icon: <a href="https://www.twitch.tv/kalebjahad" target="_blank"><FaTwitch size={30}/></a>}
     ]
     
     return(<>
