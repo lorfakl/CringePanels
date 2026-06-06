@@ -84,7 +84,7 @@ function PanelHistory() {
                 <div className="w-full max-w-7xl">
                     <div className="rounded-box bg-base-200 shadow-lg p-4 lg:p-6">
                         {yearPanels.length > 0 ? (
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
                                 {yearPanels.map((item) => (
                                     <PanelCard key={item.id} item={item} />
                                 ))}
