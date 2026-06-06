@@ -5,8 +5,25 @@ const processedData = {};
 for (const [year, events] of Object.entries(conventionData)) {
     processedData[year] = events.map(event => ({
         ...event,
-        startDate: new Date(event.startDate)
+        startDate: new Date(event.startDate),
+        panels: (event.panels || []).map(panel => ({
+            scheduleDescription: '',
+            ...panel
+        }))
     }));
+}
+
+function normalizePanelTitle(title) {
+    return (title || '').trim().toLowerCase();
+}
+
+function getPanelOccurrence(convention) {
+    return {
+        conventionName: convention.name,
+        websiteUrl: convention.websiteUrl,
+        conventionDate: convention.startDate,
+        conventionYear: convention.startDate.getFullYear()
+    };
 }
 
 /**
@@ -126,6 +143,79 @@ export function getAllPanelsForYear(year) {
     }
     
     return panels;
+}
+
+/**
+ * Get unique panels for a specific year, grouped by panel title.
+ * Each panel includes all convention occurrences for that year.
+ * @param {string|number} year - The year to get panels for
+ * @returns {Array} Array of unique panel objects with occurrence badges
+ */
+export function getUniquePanelsByYear(year) {
+    const yearStr = String(year);
+    const conventions = processedData[yearStr] || [];
+    const panelMap = new Map();
+
+    for (const convention of conventions) {
+        for (const panel of convention.panels) {
+            const panelKey = normalizePanelTitle(panel.title);
+            const occurrence = getPanelOccurrence(convention);
+
+            if (!panelMap.has(panelKey)) {
+                panelMap.set(panelKey, {
+                    id: panelKey,
+                    title: panel.title,
+                    image: panel.image,
+                    durationHours: panel.durationHours,
+                    description: panel.description,
+                    scheduleDescription: panel.scheduleDescription,
+                    occurrences: [occurrence],
+                    firstOccurrenceDate: convention.startDate
+                });
+                continue;
+            }
+
+            const existingPanel = panelMap.get(panelKey);
+
+            if (!existingPanel.image && panel.image) {
+                existingPanel.image = panel.image;
+            }
+
+            if (!existingPanel.durationHours && panel.durationHours) {
+                existingPanel.durationHours = panel.durationHours;
+            }
+
+            if (!existingPanel.description && panel.description) {
+                existingPanel.description = panel.description;
+            }
+
+            if (!existingPanel.scheduleDescription && panel.scheduleDescription) {
+                existingPanel.scheduleDescription = panel.scheduleDescription;
+            }
+
+            existingPanel.occurrences.push(occurrence);
+
+            if (convention.startDate < existingPanel.firstOccurrenceDate) {
+                existingPanel.firstOccurrenceDate = convention.startDate;
+                existingPanel.title = panel.title;
+            }
+        }
+    }
+
+    return Array.from(panelMap.values())
+        .map((panel) => ({
+            ...panel,
+            occurrences: panel.occurrences.sort((a, b) => a.conventionDate - b.conventionDate)
+        }))
+        .sort((a, b) => {
+            const dateDiff = a.firstOccurrenceDate - b.firstOccurrenceDate;
+
+            if (dateDiff !== 0) {
+                return dateDiff;
+            }
+
+            return a.title.localeCompare(b.title);
+        });
 }
 
 /**

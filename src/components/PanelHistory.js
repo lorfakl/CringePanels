@@ -1,40 +1,24 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { getAvailableYears, getConventionsByYear } from '../services/panelDataService';
-import ConventionBreakCard from './panelHistory/ConventionBreakCard';
+import React, { useMemo, useState } from 'react';
+import { getAvailableYears, getConventionsByYear, getUniquePanelsByYear } from '../services/panelDataService';
 import PanelCard from './panelHistory/PanelCard';
 
 function PanelHistory() {
     const years = getAvailableYears();
-    const [selectedYear, setSelectedYear] = useState(years[years.length - 1]); // Start with most recent year
-    const verticalCarouselRef = useRef(null);
+    const [selectedYear, setSelectedYear] = useState(() => years[years.length - 1] || '');
 
     const yearConventions = getConventionsByYear(selectedYear);
-    const yearItems = useMemo(() => {
-        return yearConventions.flatMap((convention) => {
-            const conventionItem = {
-                type: 'convention',
-                id: `convention-${convention.name}-${convention.startDate.getTime()}`,
-                name: convention.name,
-                startDate: convention.startDate,
-                panelCount: convention.panels.length,
-                totalHours: convention.panels.reduce((sum, panel) => sum + (panel.durationHours || 0), 0),
-                previewImage: convention.previewImage,
-                websiteUrl: convention.websiteUrl
-            };
-
-            const panelItems = convention.panels.map((panel, index) => ({
-                ...panel,
-                type: 'panel',
-                id: `panel-${convention.name}-${index}`,
-                convention: convention.name,
-                conventionDate: convention.startDate
-            }));
-
-            return [conventionItem, ...panelItems];
-        });
-    }, [yearConventions]);
+    const yearPanels = useMemo(() => getUniquePanelsByYear(selectedYear), [selectedYear]);
+    const totalAppearances = yearPanels.reduce((sum, panel) => sum + panel.occurrences.length, 0);
+    const totalHours = yearPanels.reduce(
+        (sum, panel) => sum + (panel.durationHours || 0) * panel.occurrences.length,
+        0
+    );
 
     const handlePrevYear = () => {
+        if (!years.length) {
+            return;
+        }
+
         const currentIdx = years.indexOf(selectedYear);
         if (currentIdx > 0) {
             setSelectedYear(years[currentIdx - 1]);
@@ -42,20 +26,15 @@ function PanelHistory() {
     };
 
     const handleNextYear = () => {
+        if (!years.length) {
+            return;
+        }
+
         const currentIdx = years.indexOf(selectedYear);
         if (currentIdx < years.length - 1) {
             setSelectedYear(years[currentIdx + 1]);
         }
     };
-
-    useEffect(() => {
-        if (verticalCarouselRef.current) {
-            verticalCarouselRef.current.scrollTo({
-                top: 0,
-                behavior: 'auto'
-            });
-        }
-    }, [selectedYear]);
 
     return (
         <div className="bg-neutral min-h-screen p-4 lg:p-8">
@@ -64,17 +43,17 @@ function PanelHistory() {
             </h1>
 
             <div className="flex justify-center mb-8">
-                <div className="flex items-center gap-4 ">
+                <div className="relative w-full max-w-5xl px-12 lg:px-16">
                     <button
                         onClick={handlePrevYear}
-                        className="btn btn-sm lg:btn-md btn-secondary"
-                        disabled={years.indexOf(selectedYear) === 0}
+                        className="btn btn-sm lg:btn-md btn-secondary absolute left-0 top-1/2 -translate-y-1/2"
+                        disabled={!years.length || years.indexOf(selectedYear) === 0}
                     >
                         ←
                     </button>
 
-                    <div className="flex-1 overflow-x-auto">
-                        <div className="flex gap-3 pb-2">
+                    <div className="overflow-x-auto">
+                        <div className="flex justify-center gap-3 pb-2">
                             {years.map((year) => (
                                 <button
                                     key={year}
@@ -93,8 +72,8 @@ function PanelHistory() {
 
                     <button
                         onClick={handleNextYear}
-                        className="btn btn-sm lg:btn-md btn-secondary"
-                        disabled={years.indexOf(selectedYear) === years.length - 1}
+                        className="btn btn-sm lg:btn-md btn-secondary absolute right-0 top-1/2 -translate-y-1/2"
+                        disabled={!years.length || years.indexOf(selectedYear) === years.length - 1}
                     >
                         →
                     </button>
@@ -102,33 +81,30 @@ function PanelHistory() {
             </div>
 
             <div className="flex justify-center">
-                <div className="w-full max-w-2xl">
-                    <div ref={verticalCarouselRef} className="carousel carousel-vertical w-full h-96 lg:h-[600px] rounded-box bg-base-200 shadow-lg">
-                        {yearItems.map((item, idx) => (
-                            <div
-                                key={item.id}
-                                id={`panel-${idx}`}
-                                className="carousel-item w-full h-full snap-center scroll-smooth"
-                            >
-                                <div className="flex flex-col w-full h-full p-4 lg:p-8">
-                                    {item.type === 'convention' ? (
-                                        <ConventionBreakCard item={item} />
-                                    ) : (
-                                        <PanelCard item={item} />
-                                    )}
-                                </div>
+                <div className="w-full max-w-7xl">
+                    <div className="rounded-box bg-base-200 shadow-lg p-4 lg:p-6">
+                        {yearPanels.length > 0 ? (
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
+                                {yearPanels.map((item) => (
+                                    <PanelCard key={item.id} item={item} />
+                                ))}
                             </div>
-                        ))}
+                        ) : (
+                            <div className="py-16 text-center opacity-70">
+                                No panels found for {selectedYear}.
+                            </div>
+                        )}
                     </div>
 
-                    <div className="text-center text-sm opacity-75 mt-4">
+                    <div className="text-center text-sm opacity-75 mt-4 space-y-1">
                         <p>
-                            {yearConventions.reduce((sum, convention) => sum + convention.panels.length, 0)} panel
-                            {yearConventions.reduce((sum, convention) => sum + convention.panels.length, 0) !== 1 ? 's' : ''} in {selectedYear}
+                            {yearPanels.length} unique panel{yearPanels.length !== 1 ? 's' : ''} in {selectedYear}
                         </p>
-                        <p>{yearConventions.length} convention{yearConventions.length !== 1 ? 's' : ''}</p>
+                        <p>
+                            {totalAppearances} appearance{totalAppearances !== 1 ? 's' : ''} across {yearConventions.length} convention{yearConventions.length !== 1 ? 's' : ''}
+                        </p>
                         <p className="font-semibold text-base">
-                            {yearItems.reduce((sum, item) => sum + (item.durationHours || 0), 0)} hours total
+                            {totalHours} hours total
                         </p>
                     </div>
                 </div>

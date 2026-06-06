@@ -7,7 +7,8 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "making_games.png"
+                    "image": "making_games.png",
+                    "scheduleDescription": "Are you a normal person (not clouted up)? Do you want to make a game? As a normal person(not famous/rich) I will go over the WHOLE game dev process and pitfalls"
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -21,12 +22,14 @@
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "description": "Had Yokai Chat's <a href=\"https://www.instagram.com/pen.saga/\" className=\"underline underline-offset-4\">Artistic director</a> on stage for this one",
                     "durationHours": 1,
-                    "image": "making_games.png"
+                    "image": "making_games.png",
+                    "scheduleDescription": "Are you a normal person (not clouted up)? Do you want to make a game? As a normal person(not famous/rich) I will go over the WHOLE game dev process and pitfalls"
                 },
                 {
                     "title": "From the mud, like the rest of us(Retired)",
                     "durationHours": 1,
-                    "image": "/images/panels/from-mud.jpg"
+                    "image": "/images/panels/from-mud.jpg",
+                    "scheduleDescription": "Your favorite shounen hero, got there through hard work and dedication, right? Or were they just as the literal 2nd coming of Christ? Come find out who really got it from the mud and who's just a nepo baby!"
                 }
             ],
             "websiteUrl": "https://www.animazement.com",
@@ -41,12 +44,14 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "making_games.png"
+                    "image": "making_games.png",
+                    "scheduleDescription": "Are you a normal person (not clouted up)? Do you want to make a game? As a normal person(not famous/rich) I will go over the WHOLE game dev process and pitfalls"
                 },
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": "Subs v Dubs a battle raging as long as anime has existed. You will walk into this panel a devout disciple of the church of Sub, and walk out an eager evangelist for the Church of Dub!"
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -59,17 +64,20 @@
                 {
                     "title": "What Releasing a Game is like...for NORMAL people",
                     "durationHours": 1,
-                    "image": "making_games.png"
+                    "image": "making_games.png",
+                    "scheduleDescription": "Are you a normal person (not clouted up)? Do you want to make a game? As a normal person(not famous/rich) I will go over the WHOLE game dev process and pitfalls"
                 },
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": "Subs v Dubs a battle raging as long as anime has existed. You will walk into this panel a devout disciple of the church of Sub, and walk out an eager evangelist for the Church of Dub!"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "cultured_manga_tags.png"
+                    "image": "cultured_manga_tags.png",
+                    "scheduleDescription": "You see the title, you see the image you know what this is 😏"
                 }
             ],
             "websiteUrl": "https://banzaicon.com",
@@ -82,12 +90,14 @@
                 {
                     "title": "It is not Dubs that are cringe! But Anime itself!",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": "Subs v Dubs a battle raging as long as anime has existed. You will walk into this panel a devout disciple of the church of Sub, and walk out an eager evangelist for the Church of Dub!"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "cultured_manga_tags.png"
+                    "image": "cultured_manga_tags.png",
+                    "scheduleDescription": "You see the title, you see the image you know what this is 😏"
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -100,12 +110,14 @@
                 {
                     "title": "It Is Not Dubs That Are Cringe! But Anime Itself!",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": ""
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "cultured_manga_tags.png"
+                    "image": "cultured_manga_tags.png",
+                    "scheduleDescription": ""
                 }
             ],
             "websiteUrl": "https://www.animazement.com",
@@ -118,7 +130,8 @@
                 {
                     "title": "Anime Arena: Battle of the Fans!",
                     "durationHours": 1,
-                    "image": "/images/panels/anime-arena.jpg"
+                    "image": "/images/panels/anime-arena.jpg",
+                    "scheduleDescription": "We have ACTUAL buzzers! Results gathered from attendees of this very convention(and others). Compete in teams of 5 to see how in tune you are with your fellow anime-enjoyers, bragging rights, and trophies(tiny plastic) for the winners!"
                 }
             ],
             "websiteUrl": "https://blerdcon.com",
@@ -133,12 +146,14 @@
                 {
                     "title": "Yelling About LitRPGs For An Hour",
                     "durationHours": 1,
-                    "image": "yelling_about_litrpgs.png"
+                    "image": "yelling_about_litrpgs.png",
+                    "scheduleDescription": "It's like if weebs wrote books and then someone got someone else to read that book to you and do all the voices. We're diving into the wild wild world of LitRPG audiobooks, if you know what that is this panel's for you! If you don't know what that is...THIS PANEL'S FOR YOU!"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 1,
-                    "image": "cultured_manga_tags.png"
+                    "image": "cultured_manga_tags.png",
+                    "scheduleDescription": "We listen and we DO judge(lovingly ❤). We’re building a tierlist from some of the more interesting  cultured manga tags. Come prepared to ensure the tags you love the most get boosted and tags you blacklist…do not. "
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -151,12 +166,14 @@
                 {
                     "title": "Yelling About LitRPGs For An Hour",
                     "durationHours": 1,
-                    "image": "yelling_about_litrpgs.png"
+                    "image": "yelling_about_litrpgs.png",
+                    "scheduleDescription": "It's like if weebs wrote books and then someone got someone else to read that book to you and do all the voices. We're diving into the wild wild world of LitRPG audiobooks, if you know what that is this panel's for you! If you don't know what that is...THIS PANEL'S FOR YOU!"
                 },
                 {
                     "title": "Cultured Manga Tag Tierlist (18+)",
                     "durationHours": 2,
-                    "image": "cultured_manga_tags.png"
+                    "image": "cultured_manga_tags.png",
+                    "scheduleDescription": "We listen and we DO judge(lovingly ❤). We’re building a tierlist from some of the more interesting  cultured manga tags. Come prepared to ensure the tags you love the most get boosted and tags you blacklist…do not. "
                 }
             ],
             "websiteUrl": "https://triadanimecon.com/",
@@ -169,17 +186,20 @@
                 {
                     "title": "NEW! Summer 2025 Anime Tierlist",
                     "durationHours": 1,
-                    "image": "/images/panels/anime-tierlist-summer.jpg"
+                    "image": "SummerAnime2025TitleCard.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "4D Chess Tournament!!! - Smartest In Anime",
                     "durationHours": 1,
-                    "image": "/images/panels/chess-tournament.jpg"
+                    "image": "4DChessTitleCardNoShade.png",
+                    "scheduleDescription": "Join us for an electrifying tournament-style showdown to determine anime's ultimate strategic mind! Sixteen brilliant characters from across beloved series will compete in a single-elimination bracket, with YOU deciding their fate. Vote for who advances through each round. Add your voice to the debate and help crown the greatest anime strategist of all time! (It's Lelouch, btw)"
                 },
                 {
                     "title": "STOP! Dont Tier 3 to that VTuber!! (Or do, Im not your mom, but she might be)",
                     "durationHours": 1,
-                    "image": "vtuber.png"
+                    "image": "vtuber.png",
+                    "scheduleDescription": "Ever wonder why people watch anime girls play games and cause drama? Come learn about VTubers - from sweet to spicy, we're covering it all! Bring your stories, we want to hear them! "
                 }
             ],
             "websiteUrl": "https://www.animazement.com",
@@ -192,17 +212,20 @@
                 {
                     "title": "NEW! 2025 Anime Tierlist - Winter Edition",
                     "durationHours": 1,
-                    "image": "/images/panels/anime-tierlist-winter.jpg"
+                    "image": "/images/panels/anime-tierlist-winter.jpg",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "The Meh-nificent Sixteen: A Tournament of Mid!",
                     "durationHours": 1,
-                    "image": "/images/panels/tournament-mid.jpg"
+                    "image": "MidAnimeTitleCard.png",
+                    "scheduleDescription": "TOOOOOOURNAMENT ARRRRC!!! 16 of most MID anime series are going head to head! Who wins? ¯\\(°_o)/¯ You decide! We all know THAT show is so MID and shouldnt have won all those awards, come crown the most mid anime of NekoCon 2025"
                 },
                 {
                     "title": "Dubs Are Objectively The Best Way To Watch Anime: Yes You're All Wrong",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": "I am correct you are all wrong, and I will stand up 10 toes down and say it. Dubs are amazing and I will debate anyone on the topic. Leaving this panel you too will be a based dub enjoyer"
                 }
             ],
             "websiteUrl": "https://nekocon.com",
@@ -217,12 +240,14 @@
                 {
                     "title": "NEW! 2025 Anime Tierlist! All 128 Shows!?!? (No Shot!)",
                     "durationHours": 2,
-                    "image": "/images/panels/anime-tierlist-all.jpg"
+                    "image": "AllAnime2025TItleCard.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the PREVIOUS YEAR!? (Minus all the isekai slop)  Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "ULTRA Romantic Tournament Arc: Most Romantic Anime",
                     "durationHours": 1,
-                    "image": "UltraRomanticRumble.png"
+                    "image": "UltraRomanticRumble.png",
+                    "scheduleDescription": "All's fair in Love and War. Choose your fighter(favorite romance show) and help them be crowned the ULTRA ROMANTIC romance anime, in the love language of shounen…A TOOOURNAMENT AAARRRC!!!!! "
                 }
             ],
             "websiteUrl": "https://ichibancon.com",
@@ -235,12 +260,14 @@
                 {
                     "title": "NEW! Winter 2026 Anime Tierlist!",
                     "durationHours": 1,
-                    "image": "WinterAnime26Title.png"
+                    "image": "WinterAnime26Title.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "Weird Anime Kid Becomes Weird Anime Adult (Emotional)",
                     "durationHours": 1,
-                    "image": "weird_anime_kid.png"
+                    "image": "weird_anime_kid.png",
+                    "scheduleDescription": "Let's discuss how watching anime every weekend from 6th-11th grade, molded my entire personality. The good, the bad, the cringe and the cultured. This one is for the weirdos!"
                 }
             ],
             "websiteUrl": "https://banzaicon.com",
@@ -253,17 +280,20 @@
                 {
                     "title": "NEW! Winter 2026 Anime Tierlist!",
                     "durationHours": 1,
-                    "image": "WinterAnime26Title.png"
+                    "image": "WinterAnime26Title.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "Weird Anime Kid Becomes Weird Anime Adult (Emotional)",
                     "durationHours": 1,
-                    "image": "weird_anime_kid.png"
+                    "image": "weird_anime_kid.png",
+                    "scheduleDescription": "Let's discuss how watching anime every weekend from 6th-11th grade, molded my entire personality. The good, the bad, the cringe and the cultured. This one is for the weirdos!"
                 },
                 {
                     "title": "Hater's Ball: Most Hated Anime",
                     "durationHours": 1,
-                    "image": "most_hated.png"
+                    "image": "most_hated.png",
+                    "scheduleDescription": "LETS GET NEGATIVE!!! Head to head dispised anime compete for the title of 'The Hated One'."
                 }
             ],
             "websiteUrl": "https://triadcon.org",
@@ -276,7 +306,8 @@
                 {
                     "title": "3D Printing 4 Cosplay!",
                     "durationHours": 1,
-                    "image": "3d_printing.png"
+                    "image": "3d_printing.png",
+                    "scheduleDescription": ""
                 }
             ],
             "websiteUrl": "https://www.momocon.com",
@@ -287,19 +318,22 @@
             "name": "Big Charlotte Anime 2026",
             "panels": [
                 {
-                    "title": "So You Want To Be A Special Grade (Hardest JJK Trivia)",
+                    "title": "Who Wants To Be A Special Grade (Hardest JJK Trivia)",
                     "durationHours": 1,
-                    "image": "so_you_want_to_be_a_special_grade.png"
+                    "image": "WhoWantsToBeASpecialGrade.png",
+                    "scheduleDescription": "Wanna prove you're not a JJK larper? Can you exorcise the Reading Comprehension curse? Alright, come fight your way from fourth grade sorcerer to special grade sorcerer, in the hardest JJK trivia challenge"
                 },
                 {
-                    "title": "NEW! Summer 2025 Anime Tierlist",
+                    "title": "NEW! Summer 2026 Anime Tierlist",
                     "durationHours": 1,
-                    "image": "summer_2025_anime_tierlist.png"
+                    "image": "summer_2026_anime_tierlist.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
                     "title": "Dubs Are Objectively The Best Way To Watch Anime: Yes You're All Wrong",
                     "durationHours": 1,
-                    "image": "dubs_are_great.png"
+                    "image": "dubs_are_great.png",
+                    "scheduleDescription": "I am correct you are all wrong, and I will stand up 10 toes down and say it. Dubs are amazing and I will debate anyone on the topic. Leaving this panel you too will be a based dub enjoyer"
                 }
             ]
         }
