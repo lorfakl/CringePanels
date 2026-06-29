@@ -324,9 +324,9 @@
                     "scheduleDescription": "Wanna prove you're not a JJK larper? Can you exorcise the Reading Comprehension curse? Alright, come fight your way from fourth grade sorcerer to special grade sorcerer, in the hardest JJK trivia challenge"
                 },
                 {
-                    "title": "NEW! Summer 2026 Anime Tierlist",
+                    "title": "NEW! Spring 2026 Anime Tierlist",
                     "durationHours": 1,
-                    "image": "summer_2026_anime_tierlist.png",
+                    "image": "spring_2026_anime_tierlist.png",
                     "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
                 },
                 {
@@ -334,6 +334,18 @@
                     "durationHours": 1,
                     "image": "dubs_are_great.png",
                     "scheduleDescription": "I am correct you are all wrong, and I will stand up 10 toes down and say it. Dubs are amazing and I will debate anyone on the topic. Leaving this panel you too will be a based dub enjoyer"
+                }
+            ]
+        },
+        {
+            "startDate": "2026-08-15",
+            "name": "Queen City Anime Con 2026",
+            "panels": [
+                {
+                    "title": "Hater's Ball: Most Hated Anime",
+                    "durationHours": 1,
+                    "image": "most_hated.png",
+                    "scheduleDescription": "LETS GET NEGATIVE!!! Head to head dispised anime compete for the title of 'The Hated One'."
                 }
             ]
         }
