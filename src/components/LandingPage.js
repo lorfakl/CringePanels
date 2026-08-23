@@ -20,9 +20,9 @@ function LandingPage()
     })
 
     const [nextConvention, setNextConvention] = useState({
-        conventionName: "Queen City Anime Con 2026",
-        conventionDate: new Date("2026-08-14T15:00:00"),
-        conventionLink: 'https://queencityanimecon.com/'
+        conventionName: "Anime Weekend Atlanta 2026",
+        conventionDate: new Date("2026-11-19T15:00:00"),
+        conventionLink: 'https://awa-con.com/'
     })
 
     // Calculate stats on component mount
