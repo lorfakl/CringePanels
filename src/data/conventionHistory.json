@@ -372,6 +372,18 @@
                     "scheduleDescription": "A higher-tier, lore-heavy discussion focused entirely on the heavy emotional beats, intense recording sessions, and cinematic scale of the Infinity Castle trilogy and upper-rank demon backstories. Moderated by: Kaizen Panels"
                 }
             ]
+        },
+        {
+            "startDate": "2026-10-03",
+            "name": "Anime Ink 2026",
+            "panels": [
+                {
+                    "title": "NEW! Summer 2026 Anime Tierlist",
+                    "durationHours": 1,
+                    "image": "SummerAnime2026.png",
+                    "scheduleDescription": "Do YOU want to talk about anime of the CURRENT YEAR!? Well that's what this panel is about! We're making a real life tierlist no tierlist.com here. Its kinda like a irl r/anime thread!"
+                }
+            ]
         }
     ]
 }
